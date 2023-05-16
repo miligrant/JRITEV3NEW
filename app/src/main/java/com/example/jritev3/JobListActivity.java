@@ -30,7 +30,10 @@ public class JobListActivity extends AppCompatActivity {
         jobAdapter = new JobAdapter(JobListActivity.this,jobs);
         jobRecyclerView.setAdapter(jobAdapter);
 
-        //add data
+        //add data (COMPULSORY)
         jobs.add(new Job("test","test",20));
+
+        //Uncomment below to create list(technically the same as above)
+        //jobs.add(new Job("test","test",20));
     }
 }
