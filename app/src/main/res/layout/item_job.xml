@@ -12,23 +12,26 @@
         android:id="@+id/titleTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="123"
         android:textSize="16sp"
-        android:textStyle="bold"
-        tools:text="test" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/descriptionTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        tools:text="test" />
+        android:layout_weight="1"
+        android:text="123" />
 
     <TextView
         android:id="@+id/budgetTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:textStyle="bold"
-        tools:text="test" />
+        android:layout_weight="1"
+        android:text="123"
+        android:textStyle="bold" />
 
 </LinearLayout>

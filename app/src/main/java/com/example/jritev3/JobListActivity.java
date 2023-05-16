@@ -2,6 +2,7 @@ package com.example.jritev3;
 
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,27 +12,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JobListActivity extends AppCompatActivity {
-    private RecyclerView jobRecyclerView;
-    private JobAdapter jobAdapter;
-    private List<Job> jobs;
+    RecyclerView jobRecyclerView;
+    JobAdapter jobAdapter;
+    List<Job> jobs;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_layout);
 
+        //initialize Recycler view
         jobRecyclerView = findViewById(R.id.jobRecyclerView);
-        jobRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        jobRecyclerView.setLayoutManager(new LinearLayoutManager(JobListActivity.this, RecyclerView.VERTICAL,false));
 
-        jobs = new ArrayList<>(); // Populate this list with actual jobs from your data source
-
-        jobAdapter = new JobAdapter(this,jobs);
+        //initialize data job and adapter
+        jobs = new ArrayList<>();
+        jobAdapter = new JobAdapter(JobListActivity.this,jobs);
         jobRecyclerView.setAdapter(jobAdapter);
-    }
 
-    /*@Override
-    public void onItemClick(Job job) {
-        // Handle the click event for a specific job item
-        // You can start a new activity to display job details or proceed with the bidding process
-    }*/
+        //add data
+        jobs.add(new Job("test","test",20));
+    }
 }
